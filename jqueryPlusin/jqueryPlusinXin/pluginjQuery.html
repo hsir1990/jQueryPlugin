@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .hide{display: none;}
+    .show{font-size: 20px;}
+    .active{color: #f00;}
+    </style>
+</head>
+<body>
+    <div id="content" class="hide">
+        <ul>
+            <li>1</li>
+            <li class="active">2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <p class="btn-step-pre">上一个</p>
+        <p class="btn-step-next">下一个</p>
+        <p class="btn-step-submit">提交</p>
+    </div>
+    <script type="text/javascript" src="./jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="./plugin.js"></script>
+    <script type="text/javascript" >
+        var options = {
+            fnStepPrev : fnStepPrev,
+            fnStepNext : fnStepNext,
+            fnStepSubmit : fnStepSubmit,
+            fnAfterSubmit : fnAfterSubmit
+        }
+
+        $('#content').stepByStep(options);
+
+        function fnStepNext(index, data){
+            var active = true;
+            return {
+                active: active,
+                data: [{
+                    example : '从下一步拿到的数据'
+                }],
+                handle : function(data){
+                    console.log(data);
+                }//插件内部处理数据的函数
+            }
+        }
+        function fnStepPrev(index, data){
+            var active = true;
+            return {
+                active: active,
+                data: [{
+                    example : '从下一步拿到的数据'
+                }],
+                handle : function(data){
+                    console.log(data);
+                }//插件内部处理数据的函数
+            }
+        }
+        function fnStepSubmit(index, data){
+            var active = true;
+            return {
+                active: active,
+                data: [{
+                    example : '从下一步拿到的数据'
+                }],
+                handle : function(data){
+                    console.log(data);
+                }//插件内部处理数据的函数
+            }
+        }
+        function fnAfterSubmit(index, data){
+            var active = true;
+            return {
+                active: active,
+                data: [{
+                    example : '从下一步拿到的数据'
+                }],
+                handle : function(data){
+                    console.log(data);
+                }//插件内部处理数据的函数
+            }
+        }
+    </script>
+</body>
+</html>
